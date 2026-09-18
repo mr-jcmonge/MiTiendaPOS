@@ -16,10 +16,10 @@ namespace MiTiendaPOS.Models
         public string Nombre { get; set; }
 
         [MaxLength(50)]
-        public string Correo { get; set; }
+        public string? Correo { get; set; }
 
         [MaxLength(20)]
-        public string Telefono { get; set; }
+        public string? Telefono { get; set; }
 
         public List<Venta> Ventas { get; set; } = new();
     }

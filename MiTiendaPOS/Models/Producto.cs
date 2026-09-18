@@ -23,6 +23,7 @@ namespace MiTiendaPOS.Models
 
         [Required]
         public int Stock { get; set; }
+        public bool Activo { get; set; }
 
         //Definimos la clave foranea hacia categoria
         public int CategoriaId { get; set; }

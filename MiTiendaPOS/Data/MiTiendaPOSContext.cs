@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using MiTiendaPOS.Config;
 using MiTiendaPOS.Models;
 using System;
 using System.Collections.Generic;
@@ -17,12 +18,17 @@ namespace MiTiendaPOS.Data
         public DbSet<Venta> Ventas { get; set; }
         public DbSet<DetalleVenta> DetallesVenta { get; set; }
 
+        public MiTiendaPOSContext() { }
+
+        public MiTiendaPOSContext(DbContextOptions<MiTiendaPOSContext>options)
+            : base(options) { }
+
         protected override void OnConfiguring(DbContextOptionsBuilder options)
-        {
-            options.UseSqlServer(
-                "Server=(localdb)\\MSSQLLocalDB;Database=MiTiendaPOSDB;" +
-                "Trusted_Connection=True;TrustServerCertificate=True");
-        
+        {// reemplazamos la cadena de conexion que tenia definida anteriormente
+            if (!options.IsConfigured)
+            {
+                options.UseSqlServer(ConfiguracionApp.ObtenerCadenaConexion());
+            }
         }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
@@ -56,6 +62,14 @@ namespace MiTiendaPOS.Data
                 .WithMany()
                 .HasForeignKey(dv => dv.ProductoId)
                 .OnDelete(DeleteBehavior.Restrict);
+
+            modelBuilder.Entity<Categoria>().HasData(
+                new Categoria { Id = 1, Nombre = "Bebidas" },
+                new Categoria { Id = 2, Nombre = "Abarrotes" },
+                new Categoria { Id = 3, Nombre = "Limpieza" });
+
+            modelBuilder.Entity<Usuario>().HasData(
+                new Usuario { Id = 1, NombreUsuario = "amin", Rol = "Administrador" });
         }
     }
 }
