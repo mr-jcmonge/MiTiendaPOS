@@ -63,6 +63,7 @@ namespace MiTiendaPOS.Data
                 .HasForeignKey(dv => dv.ProductoId)
                 .OnDelete(DeleteBehavior.Restrict);
 
+            //AÑADIMOS DATOS SEMILLA, PARA REALIZAR LAS PRUEBAS EN LA TABLA "CATEGORIA" Y "USUARIO"
             modelBuilder.Entity<Categoria>().HasData(
                 new Categoria { Id = 1, Nombre = "Bebidas" },
                 new Categoria { Id = 2, Nombre = "Abarrotes" },
