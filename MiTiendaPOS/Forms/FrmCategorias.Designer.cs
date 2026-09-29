@@ -56,6 +56,7 @@
             txtBuscar.Name = "txtBuscar";
             txtBuscar.Size = new Size(246, 23);
             txtBuscar.TabIndex = 1;
+            txtBuscar.TextChanged += txtBuscar_TextChanged;
             // 
             // dgvCategorias
             // 
@@ -71,6 +72,7 @@
             dgvCategorias.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgvCategorias.Size = new Size(301, 224);
             dgvCategorias.TabIndex = 2;
+            dgvCategorias.CellClick += dgvCategorias_CellClick;
             // 
             // grpDatos
             // 
@@ -107,6 +109,7 @@
             btnNuevo.TabIndex = 4;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = true;
+            btnNuevo.Click += btnNuevo_Click;
             // 
             // btnGuardar
             // 
@@ -116,6 +119,7 @@
             btnGuardar.TabIndex = 5;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
+            btnGuardar.Click += btnGuardar_Click;
             // 
             // btnEliminar
             // 
@@ -138,6 +142,9 @@
             Controls.Add(dgvCategorias);
             Controls.Add(txtBuscar);
             Controls.Add(lblFiltro);
+            FormBorderStyle = FormBorderStyle.FixedSingle;
+            MaximizeBox = false;
+            MinimizeBox = false;
             Name = "FrmCategorias";
             Text = "Mantenimiento Categorías";
             Load += FrmCategorias_Load;
