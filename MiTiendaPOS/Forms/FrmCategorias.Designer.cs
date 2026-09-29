@@ -32,8 +32,8 @@
             txtBuscar = new TextBox();
             dgvCategorias = new DataGridView();
             grpDatos = new GroupBox();
-            lblNombre = new Label();
             txtNombre = new TextBox();
+            lblNombre = new Label();
             btnNuevo = new Button();
             btnGuardar = new Button();
             btnEliminar = new Button();
@@ -83,6 +83,13 @@
             grpDatos.TabStop = false;
             grpDatos.Text = "Datos de la Categoría";
             // 
+            // txtNombre
+            // 
+            txtNombre.Location = new Point(12, 55);
+            txtNombre.Name = "txtNombre";
+            txtNombre.Size = new Size(176, 23);
+            txtNombre.TabIndex = 4;
+            // 
             // lblNombre
             // 
             lblNombre.AutoSize = true;
@@ -92,18 +99,11 @@
             lblNombre.TabIndex = 0;
             lblNombre.Text = "Nombre:";
             // 
-            // txtNombre
-            // 
-            txtNombre.Location = new Point(12, 55);
-            txtNombre.Name = "txtNombre";
-            txtNombre.Size = new Size(176, 23);
-            txtNombre.TabIndex = 4;
-            // 
             // btnNuevo
             // 
-            btnNuevo.Location = new Point(376, 176);
+            btnNuevo.Location = new Point(376, 173);
             btnNuevo.Name = "btnNuevo";
-            btnNuevo.Size = new Size(168, 23);
+            btnNuevo.Size = new Size(168, 36);
             btnNuevo.TabIndex = 4;
             btnNuevo.Text = "Nuevo";
             btnNuevo.UseVisualStyleBackColor = true;
@@ -112,7 +112,7 @@
             // 
             btnGuardar.Location = new Point(376, 215);
             btnGuardar.Name = "btnGuardar";
-            btnGuardar.Size = new Size(168, 23);
+            btnGuardar.Size = new Size(168, 36);
             btnGuardar.TabIndex = 5;
             btnGuardar.Text = "Guardar";
             btnGuardar.UseVisualStyleBackColor = true;
@@ -121,7 +121,7 @@
             // 
             btnEliminar.Location = new Point(376, 257);
             btnEliminar.Name = "btnEliminar";
-            btnEliminar.Size = new Size(168, 23);
+            btnEliminar.Size = new Size(168, 39);
             btnEliminar.TabIndex = 6;
             btnEliminar.Text = "Eliminar";
             btnEliminar.UseVisualStyleBackColor = true;

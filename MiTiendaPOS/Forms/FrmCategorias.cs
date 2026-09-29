@@ -35,12 +35,10 @@ namespace MiTiendaPOS.Forms
         private void LimpiarFormulario()
         {
             _idSeleccionado = 0;
-            _idSeleccionado = 0;
             txtNombre.Clear();
             btnEliminar.Enabled = false;
             dgvCategorias.ClearSelection();
             txtNombre.Focus();
-            //PRUEBA
         }
     }
 }
