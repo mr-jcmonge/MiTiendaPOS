@@ -71,6 +71,60 @@ namespace MiTiendaPOS.Data
 
             modelBuilder.Entity<Usuario>().HasData(
                 new Usuario { Id = 1, NombreUsuario = "amin", Rol = "Administrador" });
+
+            modelBuilder.Entity<Producto>().HasData(
+                new Producto { Id = 1, Nombre = "Soda 600ml", CategoriaId=1,
+                PrecioUnitario=0.90m, Stock=48, Activo=true},
+                new Producto
+                {
+                    Id = 2,
+                    Nombre = "Agua Purificada",
+                    CategoriaId = 1,
+                    PrecioUnitario = 0.50m,
+                    Stock = 60,
+                    Activo = true
+                },
+                new Producto
+                {
+                    Id = 3,
+                    Nombre = "Arroz Blanco",
+                    CategoriaId = 2,
+                    PrecioUnitario = 0.85m,
+                    Stock = 40,
+                    Activo = true
+                },
+                new Producto
+                {
+                    Id = 4,
+                    Nombre = "Frijol de Seda",
+                    CategoriaId = 2,
+                    PrecioUnitario = 1.10m,
+                    Stock = 20,
+                    Activo = true
+                },
+                new Producto
+                {
+                    Id = 5,
+                    Nombre = "Detergente MAXI ESPUMA",
+                    CategoriaId = 3,
+                    PrecioUnitario = 3.25m,
+                    Stock = 15,
+                    Activo = true
+                }, new Producto
+                {
+                    Id = 6,
+                    Nombre = "Lejia 1L",
+                    CategoriaId = 3,
+                    PrecioUnitario = 1.15m,
+                    Stock = 25,
+                    Activo = true
+                }
+                );
+            modelBuilder.Entity<Cliente>().HasData(
+                new Cliente { Id = 1, Nombre = "COnsumidor Final" },
+                new Cliente { Id = 2, Nombre = "María Lopez", Telefono = "7000-0000" });
+            modelBuilder.Entity<Usuario>().HasData(
+                new Usuario { Id=2, NombreUsuario="cajero1", Rol="Cajero"});
         }
     }
 }
