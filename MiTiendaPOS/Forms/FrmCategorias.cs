@@ -32,9 +32,9 @@ namespace MiTiendaPOS.Forms
                 .Select(c => new {c.Id, c.Nombre})
                 .ToList();
         }
-        private void LimpiarFormulario() 
+        private void LimpiarFormulario()
         {
-            _idSeleccionado = 0; 
+            _idSeleccionado = 0;
             _idSeleccionado = 0;
             txtNombre.Clear();
             btnEliminar.Enabled = false;
